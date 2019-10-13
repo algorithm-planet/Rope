@@ -39,24 +39,4 @@ public class Rope
 
         pos[pos.Count - 1] = end;
     }
-
-    public void Gizmos_(Color c)
-    {
-        for (int i = 0; i < pos.Count; i += 1)
-        {
-            float r = 0.1f;
-            Ball ball = new Ball(i);
-            Vector3 o = new Vector3(pos[i].x, pos[i].y, -r / 10);
-            ball.Move(o, r, c);
-
-            if (i == pos.Count - 1)
-                break;
-
-            Line line = new Line(i);
-            line.move(pos[i], pos[i + 1] - pos[i], r / 10f);
-
-            //Gizmos.DrawSphere(pos[i], 0.001f);
-            //Debug.DrawLine(pos[i], pos[i + 1], Color.red, dt);
-        }
-    }
 }
